@@ -19,7 +19,7 @@ namespace ENSEK.Classes.Helpers
             return isValidExtension && isValidFileName;
         }
 
-        public static void ProcessCustomerFile(string filePath)
+        public static bool ProcessCustomerFile(string filePath)
         {
             var package = new ExcelPackage(new FileInfo(filePath));
             if (package != null)
@@ -36,9 +36,11 @@ namespace ENSEK.Classes.Helpers
 
                     totalRows = rowCount - 1;
 
-                    ProcessCustomerData(customerDataSheet, totalRows);
+                    return ProcessCustomerData(customerDataSheet, totalRows);
                 }
             }
+
+            return false;
         }
 
         public static ResultReponseEntity ProcessMeterReadingFile(MemoryStream fileToProcess)
@@ -149,8 +151,8 @@ namespace ENSEK.Classes.Helpers
             }
         }
 
-        private static void ProcessCustomerData(ExcelWorksheet customerDataSheet, int totalRows)
-        {
+        private static bool ProcessCustomerData(ExcelWorksheet customerDataSheet, int totalRows)
+        {   
             List<CustomerComposite> customersToSave = new List<CustomerComposite>();
             var currentRow = 2;
 
@@ -183,8 +185,10 @@ namespace ENSEK.Classes.Helpers
 
             if (customersToSave.Count > 0)
             {
-                CustomerBusiness.Update(customersToSave);
+                return CustomerBusiness.Update(customersToSave);
             }
+
+            return false;
         }
 
         private static CustomerComposite NewCustomer(string? accountId, string? firstName, string? lastName) 

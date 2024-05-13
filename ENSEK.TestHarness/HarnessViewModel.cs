@@ -1,6 +1,7 @@
 ﻿using ENSEK.Classes.Helpers;
 using Microsoft.Win32;
 using System.IO;
+using System.Windows;
 
 namespace ENSEK.TestHarness
 {
@@ -22,7 +23,9 @@ namespace ENSEK.TestHarness
 
                     if (fileBytes.Length > 0 && Utilities.IsFileValidForProcessing(openFileDialog.FileName, "Test_Accounts"))
                     {
-                        Utilities.ProcessCustomerFile(openFileDialog.FileName);
+                        var result = Utilities.ProcessCustomerFile(openFileDialog.FileName);
+                                                
+                        MessageBox.Show(result ? "Successfully Imported Customer File." : "Failed To Import Customer File.", "Customer Import", MessageBoxButton.OK);
                     }
                 }
 
