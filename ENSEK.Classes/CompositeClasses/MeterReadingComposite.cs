@@ -2,7 +2,6 @@
 
 namespace ENSEK.Classes.CompositeClasses
 {
-    [Serializable]
     public class MeterReadingComposite : MeterReadingEntity
     {
         #region Fields
@@ -21,8 +20,6 @@ namespace ENSEK.Classes.CompositeClasses
         #endregion
 
         #region Properties
-
-        public bool IsValid { get; set; }
 
         #endregion
     }

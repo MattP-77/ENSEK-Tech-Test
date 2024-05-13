@@ -8,7 +8,7 @@ namespace ENSEK.MeterReadings.Controllers
     [Route("[controller]")]
     public class FileUploadController : ControllerBase
     {
-        public ResultReponseEntity ResponseObject { get; set; }
+        public ResultReponseEntity ResponseObject { get; set; } = new ResultReponseEntity();
 
         [HttpPost]
         [Route("meter-reading-uploads")]

@@ -2,7 +2,6 @@
 
 namespace ENSEK.Classes.CompositeClasses
 {
-    [Serializable]
     public class CustomerComposite : CustomerEntity
     {
         #region Fields

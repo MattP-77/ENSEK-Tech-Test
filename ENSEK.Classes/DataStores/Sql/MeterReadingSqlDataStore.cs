@@ -18,6 +18,8 @@ namespace ENSEK.Classes.DataStores.Sql
                 dt.Columns.Add("AccountId", typeof(int));
                 dt.Columns.Add("MeterReadingDateTime", typeof(DateTime));
                 dt.Columns.Add("MeterReadValue", typeof(int));
+                dt.Columns.Add("SubmittedValue", typeof(string));
+                dt.Columns.Add("IsValid", typeof(bool));
 
                 foreach (var meterReading in instancesToSave)
                 {
@@ -25,6 +27,8 @@ namespace ENSEK.Classes.DataStores.Sql
                     dr["AccountId"] = meterReading.AccountId;
                     dr["MeterReadingDateTime"] = meterReading.MeterReadingDateTime;
                     dr["MeterReadValue"] = meterReading.MeterReadValue;
+                    dr["SubmittedValue"] = meterReading.SubmittedValue;
+                    dr["IsValid"] = meterReading.IsValid;
                     dt.Rows.Add(dr);
                 }
 

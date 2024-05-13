@@ -14,6 +14,6 @@ namespace ENSEK.Classes.ResponseClasses
 
         public int TotalReadCount { get; set; }
 
-        public string MessageText { get; set; }
+        public string? MessageText { get; set; }
     }
 }

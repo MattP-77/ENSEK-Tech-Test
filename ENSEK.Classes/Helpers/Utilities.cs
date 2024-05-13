@@ -127,7 +127,8 @@ namespace ENSEK.Classes.Helpers
                 //}
 
                 var newMeterReading = 
-                    NewMeterReadingDetails(customerAccountId, meterReadingDate, outMeterReadValue, isValidReading);
+                    NewMeterReadingDetails(
+                        customerAccountId, meterReadingDate, outMeterReadValue, isValidReading, meterReadValue);
 
                 if (newMeterReading != null)
                 {
@@ -139,7 +140,7 @@ namespace ENSEK.Classes.Helpers
 
             if (meterReadingsToSave.Count > 0)
             {
-                MeterReadingBusiness.Update(meterReadingsToSave.Where(mr => mr.IsValid).ToList());
+                MeterReadingBusiness.Update(meterReadingsToSave/*.Where(mr => mr.IsValid).ToList()*/);
 
                 resultEntity.FailedReadCount = meterReadingsToSave.Where(r => !r.IsValid).Count();
                 resultEntity.SuccessfulReadCount = meterReadingsToSave.Where(r => r.IsValid).Count();
@@ -203,7 +204,8 @@ namespace ENSEK.Classes.Helpers
                 };
         }
 
-        private static MeterReadingComposite NewMeterReadingDetails(string? accountId, DateTime? meterReadingDateTime, int meterReadValue, bool validReading)
+        private static MeterReadingComposite NewMeterReadingDetails(
+            string? accountId, DateTime? meterReadingDateTime, int meterReadValue, bool validReading, string submittedValue)
         {
             return
                 new MeterReadingComposite()
@@ -212,6 +214,7 @@ namespace ENSEK.Classes.Helpers
                     AccountId = int.Parse(accountId),
                     MeterReadingDateTime = meterReadingDateTime,
                     MeterReadValue = validReading ? meterReadValue : 0,
+                    SubmittedValue = submittedValue,
                     IsValid = validReading
                 };
         }
