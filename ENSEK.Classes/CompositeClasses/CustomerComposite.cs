@@ -16,7 +16,7 @@ namespace ENSEK.Classes.CompositeClasses
         public CustomerComposite()
         {
         }
-
+         
         #endregion
 
         #region Properties

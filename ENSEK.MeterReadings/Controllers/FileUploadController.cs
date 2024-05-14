@@ -26,7 +26,7 @@ namespace ENSEK.MeterReadings.Controllers
 
             await ProcessFileForUpload(file);
 
-            return Ok(ResponseObject);
+            return Ok(ResponseObject); 
         }
 
         private async Task ProcessFileForUpload(IFormFile fileForUpload)

@@ -23,7 +23,7 @@ namespace ENSEK.TestHarness
 
                     if (fileBytes.Length > 0 && Utilities.IsFileValidForProcessing(openFileDialog.FileName, "Test_Accounts"))
                     {
-                        var result = Utilities.ProcessCustomerFile(openFileDialog.FileName);
+                        var result = Utilities.ProcessCustomerFile(openFileDialog.FileName); 
                                                 
                         MessageBox.Show(result ? "Successfully Imported Customer File." : "Failed To Import Customer File.", "Customer Import", MessageBoxButton.OK);
                     }

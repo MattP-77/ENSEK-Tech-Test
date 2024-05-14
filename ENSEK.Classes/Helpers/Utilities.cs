@@ -147,7 +147,7 @@ namespace ENSEK.Classes.Helpers
                 resultEntity.TotalReadCount = meterReadingsToSave.Count;
                 resultEntity.MessageText =
                     resultEntity.FailedReadCount > 0 && resultEntity.SuccessfulReadCount > 0 ?
-                    "File partially uploaded." :
+                    "File partially uploaded." : 
                     "File uploaded successfully.";
             }
         }

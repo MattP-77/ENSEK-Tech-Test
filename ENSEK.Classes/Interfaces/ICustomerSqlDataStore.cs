@@ -7,3 +7,4 @@ namespace ENSEK.Classes.Interfaces
         bool Update(List<CustomerComposite> instancesToSave);
     }
 }
+ 

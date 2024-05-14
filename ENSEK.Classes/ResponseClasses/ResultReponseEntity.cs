@@ -17,3 +17,4 @@ namespace ENSEK.Classes.ResponseClasses
         public string? MessageText { get; set; }
     }
 }
+ 

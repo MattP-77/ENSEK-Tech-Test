@@ -6,4 +6,4 @@ namespace ENSEK.Classes.Interfaces
     {        
         bool Update(List<MeterReadingComposite> instancesToSave);
     }
-}
+} 

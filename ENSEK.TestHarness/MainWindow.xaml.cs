@@ -12,7 +12,7 @@ namespace ENSEK.TestHarness
         public MainWindow()
         {
             InitializeComponent();
-
+             
             this.ViewModel = new HarnessViewModel();
             this.DataContext = ViewModel;
         }

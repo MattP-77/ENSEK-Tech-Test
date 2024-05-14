@@ -23,7 +23,7 @@ namespace ENSEK.Classes.DataStores.Sql
 
                 foreach (var meterReading in instancesToSave)
                 {
-                    var dr = dt.NewRow();
+                    var dr = dt.NewRow(); 
                     dr["AccountId"] = meterReading.AccountId;
                     dr["MeterReadingDateTime"] = meterReading.MeterReadingDateTime;
                     dr["MeterReadValue"] = meterReading.MeterReadValue;

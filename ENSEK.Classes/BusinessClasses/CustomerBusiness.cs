@@ -13,7 +13,7 @@ namespace ENSEK.Classes.BusinessClasses
         private static CustomerDal dal;
 
         #endregion
-
+         
         #region Properties
 
         /// <summary>

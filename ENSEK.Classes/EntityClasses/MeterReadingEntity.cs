@@ -16,4 +16,4 @@ namespace ENSEK.Classes.EntityClasses
 
         public bool IsValid { get; set; }
     }
-}
+} 

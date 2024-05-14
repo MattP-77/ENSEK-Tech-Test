@@ -12,4 +12,4 @@ namespace ENSEK.Classes.EntityClasses
 
         public string? LastName { get; set; }
     }
-}
+} 

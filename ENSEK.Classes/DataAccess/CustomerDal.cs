@@ -26,7 +26,7 @@ namespace ENSEK.Classes.DataAccess
         }
 
         #endregion
-
+         
         #region Methods
 
         public bool Update(List<CustomerComposite> instancesToSave)
